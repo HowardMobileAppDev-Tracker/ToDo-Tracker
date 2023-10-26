@@ -10,7 +10,9 @@
 3. Mood Board: Platform for users to share status updates with their friends connected to their profile.
 
 ### Jaelen
-1. 
+1. MovieMingle: Platform for movie enthusiasts to connect with one another. Users can create and share movie watchlists and reviews, join movie clubs, and get personalized movie recommendations.
+2. LearnHub: Platform for learners and creators to access interactive courses. Users can explore diverse topics, track their progress, and compete with friends on their profile.
+3. SocialSwap: Platform for users to engage in one-on-one conversations with people that share similar interests, and form meaningful relationships.
 
 ### Subomi
 1. GroupFit: Platform for users to log daily workout sessions and share their progress with friends on their profile.
