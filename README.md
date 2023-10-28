@@ -85,12 +85,12 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 ## Wireframes
 
-[Add picture of your hand sketched wireframes in this section] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="To-Do Tracker Wireframe.png">
 
 <br>
 
 <br>
 
-### [BONUS] Digital Wireframes & Mockups
+<!-- ### [BONUS] Digital Wireframes & Mockups -->
 
-### [BONUS] Interactive Prototype
+<!-- ### [BONUS] Interactive Prototype -->
