@@ -27,41 +27,61 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 **Required Features**
 
-1. [fill in your required user features here]
-2. ...
-3. ...
+1. User can create a To-Do item.
+2. User can set a reminder for To-Do items.
+3. User can enable notifications for To-Do items.
+4. User can mark a To-Do item as complete.
+
 
 **Optional Features**
 
-1. [fill in your optional user features here]
-2. ...
-3. ...
+1. User can view completed To-Do items
+2. User can view To-Do items by date by a date filter.
+3. User can delete To-Do items.
+4. User can add a deadline for To-Do items.
 
 ### 2. Screen Archetypes
 
-- [list first screen here]
-  - [list associated required story here]
-  - ...
-- [list second screen here]
-  - [list associated required story here]
-  - ...
+- To-Do List Screen
+  - User can see a list of items pending for a certain day. It shows items for "today" by default.
+	- User can select whether to see all To-Do items, items marked as complete, or items not yet completed.
+	- User can mark a To-Do item as complete.
+	- User can launch the create To-Do screen.
+  - User can delete a To-Do item.
+
+- Calendar View Filter Screen
+  - User can select a date to see To-Do items associated with it.
+
+- Late To-Dos Screen
+  - User can see a list of To-Do items that were not marked as complete past their deadline.
+	- User can mark a To-Do item as complete.
+
+- Create To-Do Screen
+  - User can create a new To-Do item.
+	- User can add a reminder to a To-Do item.
+  - User can enable notification for a To-Do item.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Pending To-Dos
+* To-Dos by Day
+* Late To-Dos
 
 **Flow Navigation** (Screen to Screen)
 
-- [list first screen here]
-  - [list screen navigation here]
-  - ...
-- [list second screen here]
-  - [list screen navigation here]
-  - ...
+- To-Do List Screen
+  - => Create To-Do screen.
+
+- Create To-Do screen
+  - => To-Do List screen after saving a created To-Do item.
+
+- Calendar View Filter Screen
+  - => To-Do list screen after selecting what date to view. To-Do items for the date is shown on the To-Do screen.
+ 
+- Late To-Dos Screen
+  - => None.
 
 ## Wireframes
 
