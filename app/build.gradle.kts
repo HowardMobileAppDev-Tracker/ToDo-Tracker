@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.appdev.to_do_tracker"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.appdev.to_do_tracker"
