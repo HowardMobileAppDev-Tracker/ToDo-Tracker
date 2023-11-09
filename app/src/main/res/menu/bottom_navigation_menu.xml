@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_late"
+        android:enabled="true"
+        android:icon="@drawable/baseline_assignment_late_24"
+        app:showAsAction="ifRoom"
+        android:title="Past Due"/>
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:icon="@drawable/baseline_home_24"
+        app:showAsAction="ifRoom"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_calendar"
+        android:enabled="true"
+        android:icon="@drawable/baseline_calendar_today_24"
+        app:showAsAction="ifRoom"
+        android:title="Calendar" />
+</menu>
