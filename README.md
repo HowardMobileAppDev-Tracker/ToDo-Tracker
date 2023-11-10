@@ -30,7 +30,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 - [ ] User can create a To-Do item.
 - [ ] User can add a deadline for To-Do items.
 - [ ] User can mark a To-Do item as complete.
-- [ ] User can view To-Do items on the Home page by a date filter.
+- [ ] User can view To-Do items by a date filter.
 - [ ] User can see all To-Do items that are past the deadline date.
 
 
