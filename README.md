@@ -110,6 +110,9 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 ## Issues worked on this sprint
 
-- List the issues you completed this sprint
+- User can create a To-Do item.
+- User can mark a To-Do item as complete on the Home page.
+- User can view To-Do items by a date filter.
+- User can see all To-Do items that are past their deadline dates.
 - [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.]
 
