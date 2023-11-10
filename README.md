@@ -28,17 +28,18 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 **Required Features**
 
 - [ ] User can create a To-Do item.
-- [ ] User can set a reminder for To-Do items.
-- [ ] User can enable notifications for To-Do items.
+- [ ] User can add a deadline for To-Do items.
 - [ ] User can mark a To-Do item as complete.
+- [ ] User can view To-Do items on the Home page by a date filter.
+- [ ] User can see all To-Do items that are past the deadline date.
 
 
 **Optional Features**
 
-- [ ] User can view completed To-Do items
-- [ ] User can view To-Do items by date by a date filter.
-- [ ] User can delete To-Do items.
-- [ ] User can add a deadline for To-Do items.
+- [ ] User can view To-Do items by completed/pending/all on the Home page.
+- [ ] User can enable a reminder notification for a To-Do item.
+- [ ] User can delete a To-Do item.
+
 
 ### 2. Screen Archetypes
 
