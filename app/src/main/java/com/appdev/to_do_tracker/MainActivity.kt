@@ -2,13 +2,24 @@ package com.appdev.to_do_tracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
+    private val currentDate: Calendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Date to pull data to show in the Home page. Set to Today's date by default. Reassigned
+        // from Calendar view.
+        var filterDay = intent.getIntExtra("DayToShow", currentDate.get(Calendar.DAY_OF_MONTH))
+        var filterMonth = intent.getIntExtra("MonthToShow", currentDate.get(Calendar.MONTH)+1)
+        var filterYear = intent.getIntExtra("YearToShow", currentDate.get(Calendar.YEAR))
+
+        // Log.v("MainActivityTag", "Chosen date is $filterMonth/$filterDay/$filterYear")
 
         val pastDueFrag: Fragment = PastDueFragment()
         val homeFrag: Fragment = HomeFragment()

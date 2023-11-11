@@ -1,5 +1,6 @@
 package com.appdev.to_do_tracker
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -43,8 +44,13 @@ class CalendarFragment : Fragment() {
         }
 
         filterButton.setOnClickListener {
-            // pull necessary records from database and pass to Home, or pass date to Home and pull in Home.
-            Log.v("Calendar Listener", "Chosen date is $filterMonth/$filterDay/$filterYear")
+            // Log.v("Calendar Listener", "Chosen date is $filterMonth/$filterDay/$filterYear")
+            // Sends the selected date to MainActivity.
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("DayToShow", filterDay)
+            intent.putExtra("MonthToShow", filterMonth)
+            intent.putExtra("YearToShow", filterYear)
+            context?.startActivity(intent)
         }
     }
 
