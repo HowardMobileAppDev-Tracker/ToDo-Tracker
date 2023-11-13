@@ -12,6 +12,7 @@ import java.util.Calendar
 class MainActivity : AppCompatActivity() {
     private val currentDate: Calendar = Calendar.getInstance()
     private val todoRecords = mutableListOf<ToDoRecord>()
+    private val pastDueRecords = mutableListOf<ToDoRecord>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,7 +43,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val pastDueFrag: Fragment = PastDueFragment()
+        lifecycleScope.launch {
+            (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(filterDay, filterMonth, filterYear).collect { databaseList ->
+                databaseList.map { entity ->
+                    ToDoRecord(
+                        entity.todoTitle,
+                        entity.isComplete,
+                        entity.deadlineDay,
+                        entity.deadlineMonth,
+                        entity.deadlineYear,
+                        entity.shouldRemind
+                    )
+                }.also { mappedList ->
+                    pastDueRecords.clear()
+                    pastDueRecords.addAll(mappedList)
+                }
+            }
+        }
+
+//        getRecordsBeforeDate
+        val pastDueFrag: Fragment = PastDueFragment(pastDueRecords)
         // todoRecords is passed into homeFrag so homeFrag can handle displaying each ToDoRecord object.
         val homeFrag: Fragment = HomeFragment(todoRecords)
         val calendarFilterFrag: Fragment = CalendarFragment()
