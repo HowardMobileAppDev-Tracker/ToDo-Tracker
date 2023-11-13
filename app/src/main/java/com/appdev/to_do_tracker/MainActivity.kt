@@ -1,8 +1,10 @@
 package com.appdev.to_do_tracker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -79,6 +81,11 @@ class MainActivity : AppCompatActivity() {
             true
         }
         bottomNavigationView.selectedItemId = R.id.nav_home
+        val buttonLaunch = findViewById<Button>(R.id.addBtn)
+        buttonLaunch.setOnClickListener {
+            val intent = Intent(this,AddItemActivity::class.java)
+            this.startActivity(intent)
+        }
     }
 
     private fun replaceFragment(newFragment: Fragment) {
