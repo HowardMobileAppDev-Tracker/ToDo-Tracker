@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val pastDueFrag: Fragment = PastDueFragment(pastDueRecords)
+        val pastDueFrag: Fragment = PastDueFragment(this, pastDueRecords)
         // filterDay, filterMonth, filterYear are passed to homeFrag where the database pull is made.
         val homeFrag: Fragment = HomeFragment(this, filterDay, filterMonth, filterYear)
         val calendarFilterFrag: Fragment = CalendarFragment()

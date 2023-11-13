@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-class ItemListAdapter (private val toDoRecord: List<ToDoRecord>)
+class ItemListAdapter (private val activity: MainActivity, private val toDoRecord: List<ToDoRecord>)
     : RecyclerView.Adapter<ItemListAdapter.TodoViewHolder>(){
     class TodoViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val todoTitle: TextView = mView.findViewById<View>(R.id.complete) as TextView
@@ -30,15 +32,24 @@ class ItemListAdapter (private val toDoRecord: List<ToDoRecord>)
         holder.todoTitle.text = record.todoTitle
         val dateString = "${record.deadlineMonth}/${record.deadlineDay}/${record.deadlineYear}"
         holder.dueDate.text = dateString
+        holder.checkBoxView.isChecked = record.isComplete == true // set box to checked if checked in database.
+
         holder.checkBoxView.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                Log.v("Item Checked", "User just clicked on an item. Delete from database")
+                // write state to database
+                setRecordState(record, true)
+            } else {
+                // write state to database
+                setRecordState(record, false)
             }
         }
 
     }
 
-    // TODO: Complete implementation of the delete function.
-    fun deleteRecord(todoObject: ToDoRecord) {}
+    private fun setRecordState(todoObject: ToDoRecord, newState: Boolean) {
+        GlobalScope.launch {
+            (activity.application as ToDoApplication).db.todoDao().setNewState(todoObject.todoTitle, todoObject.isComplete, todoObject.deadlineDay, todoObject.deadlineMonth, todoObject.deadlineYear, todoObject.shouldRemind, newState)
+        }
+    }
 
 }
