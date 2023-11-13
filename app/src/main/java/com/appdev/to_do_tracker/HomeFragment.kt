@@ -23,7 +23,7 @@ class HomeFragment(private val activity: MainActivity, private val filterDay: In
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
         val recyclerView = view.findViewById(R.id.itemRv) as RecyclerView
-        val adapter = ItemListAdapter(todoRecords)
+        val adapter = ItemListAdapter(activity, todoRecords)
         val context = view.context
 
         lifecycleScope.launch {
