@@ -15,4 +15,7 @@ interface ToDoDAO {
 
     @Query("SELECT * FROM todo_records_table WHERE deadlineDay=:filterDay AND deadlineMonth=:filterMonth AND deadlineYear=:filterYear")
     fun getRecordsByDate(filterDay: Int, filterMonth: Int, filterYear: Int): Flow<List<ToDoRecordEntity>>
+
+    @Query("SELECT * FROM todo_records_table WHERE deadlineDay<:filterDay AND deadlineMonth<=:filterMonth AND deadlineYear<=:filterYear AND isComplete=:isComplete")
+    fun getRecordsBeforeDate(filterDay: Int, filterMonth: Int, filterYear: Int, isComplete: Boolean = false): Flow<List<ToDoRecordEntity>>
 }
