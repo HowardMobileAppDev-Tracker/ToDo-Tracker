@@ -27,11 +27,11 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 **Required Features**
 
-- [ ] User can create a To-Do item.
+- [X] User can create a To-Do item.
 	* To-Do item has the reminder text, deadline date, and reminder option (optional feature).
-- [ ] User can mark a To-Do item as complete.
+- [X] User can mark a To-Do item as complete.
 - [X] User can view To-Do items by a date filter.
-- [ ] User can see all To-Do items that are past the deadline date.
+- [X] User can see all To-Do items that are past the deadline date.
 
 
 **Optional Features**
@@ -114,5 +114,5 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 - User can mark a To-Do item as complete on the Home page.
 - User can view To-Do items by a date filter.
 - User can see all To-Do items that are past their deadline dates.
-- [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.]
+  <img src="walkthrough1.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
