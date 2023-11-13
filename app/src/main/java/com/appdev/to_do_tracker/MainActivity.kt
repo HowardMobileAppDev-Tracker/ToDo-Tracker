@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-            (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(filterDay, filterMonth, filterYear).collect { databaseList ->
+            (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(currentDate.get(Calendar.DAY_OF_MONTH), currentDate.get(Calendar.MONTH)+1, currentDate.get(Calendar.YEAR)).collect { databaseList ->
                 databaseList.map { entity ->
                     ToDoRecord(
                         entity.todoTitle,
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        getRecordsBeforeDate
         val pastDueFrag: Fragment = PastDueFragment(pastDueRecords)
         // todoRecords is passed into homeFrag so homeFrag can handle displaying each ToDoRecord object.
         val homeFrag: Fragment = HomeFragment(todoRecords)
