@@ -13,7 +13,6 @@ import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     private val currentDate: Calendar = Calendar.getInstance()
-    private val todoRecords = mutableListOf<ToDoRecord>()
     private val pastDueRecords = mutableListOf<ToDoRecord>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,24 +25,6 @@ class MainActivity : AppCompatActivity() {
         val filterYear = intent.getIntExtra("YearToShow", currentDate.get(Calendar.YEAR))
 
         // Log.v("MainActivityTag", "Chosen date is $filterMonth/$filterDay/$filterYear")
-
-        lifecycleScope.launch {
-            (application as ToDoApplication).db.todoDao().getRecordsByDate(filterDay, filterMonth, filterYear).collect { databaseList ->
-                databaseList.map { entity ->
-                    ToDoRecord(
-                        entity.todoTitle,
-                        entity.isComplete,
-                        entity.deadlineDay,
-                        entity.deadlineMonth,
-                        entity.deadlineYear,
-                        entity.shouldRemind
-                    )
-                }.also { mappedList ->
-                    todoRecords.clear()
-                    todoRecords.addAll(mappedList)
-                }
-            }
-        }
 
         lifecycleScope.launch {
             (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(currentDate.get(Calendar.DAY_OF_MONTH), currentDate.get(Calendar.MONTH)+1, currentDate.get(Calendar.YEAR)).collect { databaseList ->
@@ -64,8 +45,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         val pastDueFrag: Fragment = PastDueFragment(pastDueRecords)
-        // todoRecords is passed into homeFrag so homeFrag can handle displaying each ToDoRecord object.
-        val homeFrag: Fragment = HomeFragment(todoRecords)
+        // filterDay, filterMonth, filterYear are passed to homeFrag where the database pull is made.
+        val homeFrag: Fragment = HomeFragment(this, filterDay, filterMonth, filterYear)
         val calendarFilterFrag: Fragment = CalendarFragment()
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
