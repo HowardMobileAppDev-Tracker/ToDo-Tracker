@@ -48,7 +48,7 @@ class ItemListAdapter (private val activity: MainActivity, private val toDoRecor
 
     private fun setRecordState(todoObject: ToDoRecord, newState: Boolean) {
         GlobalScope.launch {
-            (activity.application as ToDoApplication).db.todoDao().setNewState(todoObject.todoTitle, todoObject.isComplete, todoObject.deadlineDay, todoObject.deadlineMonth, todoObject.deadlineYear, todoObject.shouldRemind, newState)
+            (activity.application as ToDoApplication).db.todoDao().setNewState(todoObject.storedID, newState)
         }
     }
 

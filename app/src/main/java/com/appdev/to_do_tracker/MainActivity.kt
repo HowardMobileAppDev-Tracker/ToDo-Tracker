@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
                         entity.deadlineDay,
                         entity.deadlineMonth,
                         entity.deadlineYear,
-                        entity.shouldRemind
+                        entity.shouldRemind,
+                        entity.id
                     )
                 }.also { mappedList ->
                     pastDueRecords.clear()

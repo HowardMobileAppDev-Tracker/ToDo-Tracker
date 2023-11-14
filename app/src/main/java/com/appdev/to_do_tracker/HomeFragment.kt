@@ -35,7 +35,8 @@ class HomeFragment(private val activity: MainActivity, private val filterDay: In
                         entity.deadlineDay,
                         entity.deadlineMonth,
                         entity.deadlineYear,
-                        entity.shouldRemind
+                        entity.shouldRemind,
+                        entity.id
                     )
                 }.also { mappedList ->
                     todoRecords.clear()

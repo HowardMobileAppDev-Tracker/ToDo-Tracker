@@ -19,6 +19,6 @@ interface ToDoDAO {
     @Query("SELECT * FROM todo_records_table WHERE deadlineDay<:filterDay AND deadlineMonth<=:filterMonth AND deadlineYear<=:filterYear AND isComplete=:isComplete")
     fun getRecordsBeforeDate(filterDay: Int, filterMonth: Int, filterYear: Int, isComplete: Boolean = false): Flow<List<ToDoRecordEntity>>
 
-    @Query("UPDATE todo_records_table SET isComplete=:newState WHERE todoTitle=:todoTitle AND isComplete=:isComplete AND deadlineDay=:deadlineDay AND deadlineMonth=:deadlineMonth AND deadlineYear=:deadlineYear AND shouldRemind=:shouldRemind")
-    fun setNewState(todoTitle: String?, isComplete: Boolean?, deadlineDay: Int?, deadlineMonth: Int?, deadlineYear: Int?, shouldRemind: Boolean?, newState: Boolean)
+    @Query("UPDATE todo_records_table SET isComplete=:newState WHERE id=:todoEntityID")
+    fun setNewState(todoEntityID: Long, newState: Boolean)
 }

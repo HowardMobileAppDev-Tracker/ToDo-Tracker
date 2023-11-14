@@ -6,5 +6,6 @@ data class ToDoRecord(
     val deadlineDay: Int?,
     val deadlineMonth: Int?,
     val deadlineYear: Int?,
-    val shouldRemind: Boolean?
+    val shouldRemind: Boolean?,
+    val storedID: Long = 0
 ) : java.io.Serializable
