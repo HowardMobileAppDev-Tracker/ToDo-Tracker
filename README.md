@@ -128,6 +128,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 - List the completed user stories from this unit
 - List any pending user stories / any user stories you decided to cut
 from the original requirements
+	- User can enable a reminder notification for a To-Do item (removed).
 
 [Add video/gif of your current application that shows build progress]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
