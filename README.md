@@ -37,7 +37,6 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 **Optional Features**
 
 - [ ] User can view To-Do items by completed/pending/all on the Home page.
-- [ ] User can enable a reminder notification for a To-Do item.
 - [ ] User can delete a To-Do item.
 
 
@@ -59,7 +58,6 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 - Create To-Do Screen
   - User can create a new To-Do item.
-	- User can add a reminder to a To-Do item.
   - User can enable notification for a To-Do item.
 
 ### 3. Navigation
