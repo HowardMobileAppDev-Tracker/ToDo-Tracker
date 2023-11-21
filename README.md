@@ -36,7 +36,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 **Optional Features**
 
-- [ ] User can assign priorities to ToDo items.
+- [X] User can assign priorities to ToDo items.
 - [ ] User can delete a To-Do item.
 
 
@@ -125,11 +125,11 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 ## Completed user stories
 
 - List the completed user stories from this unit
+	-  User can assign priorities to ToDo items (added this unit).
 - List any pending user stories / any user stories you decided to cut
 from the original requirements
 	- User can enable a reminder notification for a To-Do item (removed).
   	- User can view To-Do items by completed/pending/all on the Home page (removed).
-  	- User can assign priorities to ToDo items (added).
 
 [Add video/gif of your current application that shows build progress]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
