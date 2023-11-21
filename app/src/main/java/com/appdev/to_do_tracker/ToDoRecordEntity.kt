@@ -9,6 +9,7 @@ data class ToDoRecordEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = "todoTitle") val todoTitle: String?,
     @ColumnInfo(name = "isComplete") val isComplete: Boolean?,
+    @ColumnInfo(name = "priority") val priority: String?,
     @ColumnInfo(name = "deadlineDay") val deadlineDay: Int?,
     @ColumnInfo(name = "deadlineMonth") val deadlineMonth: Int?,
     @ColumnInfo(name = "deadlineYear") val deadlineYear: Int?,

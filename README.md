@@ -36,7 +36,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 **Optional Features**
 
-- [ ] User can view To-Do items by completed/pending/all on the Home page.
+- [ ] User can assign priorities to ToDo items.
 - [ ] User can delete a To-Do item.
 
 
@@ -44,7 +44,6 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 - To-Do List Screen
   - User can see a list of items pending for a certain day. It shows items for "today" by default.
-	- User can select whether to see all To-Do items, items marked as complete, or items not yet completed.
 	- User can mark a To-Do item as complete.
 	- User can launch the create To-Do screen.
   - User can delete a To-Do item.
@@ -129,6 +128,8 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 - List any pending user stories / any user stories you decided to cut
 from the original requirements
 	- User can enable a reminder notification for a To-Do item (removed).
+  	- User can view To-Do items by completed/pending/all on the Home page (removed).
+  	- User can assign priorities to ToDo items (added).
 
 [Add video/gif of your current application that shows build progress]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
