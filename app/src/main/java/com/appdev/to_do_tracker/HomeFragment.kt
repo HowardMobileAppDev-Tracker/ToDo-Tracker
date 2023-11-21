@@ -25,6 +25,7 @@ class HomeFragment(private val activity: MainActivity, private val filterDay: In
         val recyclerView = view.findViewById(R.id.itemRv) as RecyclerView
         val adapter = ItemListAdapter(activity, todoRecords)
         val context = view.context
+        val priorityOrder = mapOf("High" to 0, "Medium" to 1, "Low" to 2)
 
         lifecycleScope.launch {
             (activity.application as ToDoApplication).db.todoDao().getRecordsByDate(filterDay, filterMonth, filterYear).collect { databaseList ->
@@ -32,6 +33,7 @@ class HomeFragment(private val activity: MainActivity, private val filterDay: In
                     ToDoRecord(
                         entity.todoTitle,
                         entity.isComplete,
+                        entity.priority,
                         entity.deadlineDay,
                         entity.deadlineMonth,
                         entity.deadlineYear,
@@ -40,7 +42,7 @@ class HomeFragment(private val activity: MainActivity, private val filterDay: In
                     )
                 }.also { mappedList ->
                     todoRecords.clear()
-                    todoRecords.addAll(mappedList)
+                    todoRecords.addAll(mappedList.sortedBy { priorityOrder[it.priority] })
                     adapter.notifyDataSetChanged()
                 }
             }
