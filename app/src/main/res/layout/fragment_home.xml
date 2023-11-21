@@ -14,44 +14,11 @@
         android:text="Date"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/filterGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
-
-    <RadioGroup
-        android:id="@+id/filterGroup"
-        android:layout_width="368dp"
-        android:layout_height="43dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/itemRvHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedDate">
-
-        <RadioButton
-            android:id="@+id/filterAll"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="All Tasks" />
-
-        <RadioButton
-            android:id="@+id/filterPending"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Pending" />
-
-        <RadioButton
-            android:id="@+id/filterComplete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Completed" />
-    </RadioGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/itemRvHome"
@@ -60,8 +27,9 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filterGroup"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDate"
         tools:listitem="@layout/item" />
 
 
