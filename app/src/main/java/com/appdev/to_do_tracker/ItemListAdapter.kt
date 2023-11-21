@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class ItemListAdapter (private val activity: MainActivity, private val toDoRecord: List<ToDoRecord>)
+class ItemListAdapter (private val activity: MainActivity, private val toDoRecord: MutableList<ToDoRecord>)
     : RecyclerView.Adapter<ItemListAdapter.TodoViewHolder>(){
     class TodoViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val todoTitle: TextView = mView.findViewById<View>(R.id.complete) as TextView
@@ -59,8 +60,22 @@ class ItemListAdapter (private val activity: MainActivity, private val toDoRecor
             }
         }
 
+        holder.checkBoxView.setOnLongClickListener{
+            var record = toDoRecord.removeAt(holder.adapterPosition)
+            deleteRecordState(record)
+            this.notifyDataSetChanged()
+            Toast.makeText(it.context, record.todoTitle + " has been deleted!", Toast.LENGTH_LONG).show()
+            true
+        }
+
     }
 
+    private fun deleteRecordState(todoObject: ToDoRecord){
+        GlobalScope.launch {
+            (activity.application as ToDoApplication).db.todoDao().delete(todoObject.storedID)
+        }
+
+    }
     private fun setRecordState(todoObject: ToDoRecord, newState: Boolean) {
         GlobalScope.launch {
             (activity.application as ToDoApplication).db.todoDao().setNewState(todoObject.storedID, newState)

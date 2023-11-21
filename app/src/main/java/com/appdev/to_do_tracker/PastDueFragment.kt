@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Use the [PastDueFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PastDueFragment(private val activity: MainActivity, private val toDoRecord: List<ToDoRecord>): Fragment() {
+class PastDueFragment(private val activity: MainActivity, private val toDoRecord: MutableList<ToDoRecord>): Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
