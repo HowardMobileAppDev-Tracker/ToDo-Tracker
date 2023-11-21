@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val filterDay = intent.getIntExtra("DayToShow", currentDate.get(Calendar.DAY_OF_MONTH))
         val filterMonth = intent.getIntExtra("MonthToShow", currentDate.get(Calendar.MONTH)+1)
         val filterYear = intent.getIntExtra("YearToShow", currentDate.get(Calendar.YEAR))
+        val priorityOrder = mapOf("High" to 0, "Medium" to 1, "Low" to 2)
 
         lifecycleScope.launch {
             (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(currentDate.get(Calendar.DAY_OF_MONTH), currentDate.get(Calendar.MONTH)+1, currentDate.get(Calendar.YEAR)).collect { databaseList ->
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }.also { mappedList ->
                     pastDueRecords.clear()
-                    pastDueRecords.addAll(mappedList)
+                    pastDueRecords.addAll(mappedList.sortedBy { priorityOrder[it.priority] })
                 }
             }
         }
