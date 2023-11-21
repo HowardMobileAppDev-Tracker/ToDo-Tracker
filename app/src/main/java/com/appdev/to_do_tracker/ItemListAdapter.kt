@@ -1,6 +1,6 @@
 package com.appdev.to_do_tracker
 
-import android.util.Log
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +16,7 @@ class ItemListAdapter (private val activity: MainActivity, private val toDoRecor
         val todoTitle: TextView = mView.findViewById<View>(R.id.complete) as TextView
         val dueDate: TextView = mView.findViewById<View>(R.id.due) as TextView
         val checkBoxView: CheckBox = mView.findViewById<View>(R.id.complete) as CheckBox
+        val priorityView: TextView = mView.findViewById<View>(R.id.itemPriority) as TextView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
@@ -32,6 +33,20 @@ class ItemListAdapter (private val activity: MainActivity, private val toDoRecor
         holder.todoTitle.text = record.todoTitle
         val dateString = "${record.deadlineMonth}/${record.deadlineDay}/${record.deadlineYear}"
         holder.dueDate.text = dateString
+        when (record.priority) {
+            "Low" -> {
+                holder.priorityView.text = "Low"
+                holder.priorityView.setTextColor(Color.GREEN)
+            }
+            "Medium" -> {
+                holder.priorityView.text = "Medium"
+                holder.priorityView.setTextColor(Color.BLUE)
+            }
+            "High" -> {
+                holder.priorityView.text = "High"
+                holder.priorityView.setTextColor(Color.RED)
+            }
+        }
         holder.checkBoxView.isChecked = record.isComplete == true // set box to checked if checked in database.
 
         holder.checkBoxView.setOnCheckedChangeListener { buttonView, isChecked ->

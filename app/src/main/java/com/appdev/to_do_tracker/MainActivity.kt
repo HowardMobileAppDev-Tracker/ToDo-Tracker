@@ -3,7 +3,6 @@ package com.appdev.to_do_tracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -24,14 +23,13 @@ class MainActivity : AppCompatActivity() {
         val filterMonth = intent.getIntExtra("MonthToShow", currentDate.get(Calendar.MONTH)+1)
         val filterYear = intent.getIntExtra("YearToShow", currentDate.get(Calendar.YEAR))
 
-        // Log.v("MainActivityTag", "Chosen date is $filterMonth/$filterDay/$filterYear")
-
         lifecycleScope.launch {
             (application as ToDoApplication).db.todoDao().getRecordsBeforeDate(currentDate.get(Calendar.DAY_OF_MONTH), currentDate.get(Calendar.MONTH)+1, currentDate.get(Calendar.YEAR)).collect { databaseList ->
                 databaseList.map { entity ->
                     ToDoRecord(
                         entity.todoTitle,
                         entity.isComplete,
+                        entity.priority,
                         entity.deadlineDay,
                         entity.deadlineMonth,
                         entity.deadlineYear,
