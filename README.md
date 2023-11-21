@@ -120,7 +120,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 ## GitHub Project board
 
-[Add screenshot of your Project Board with the updated status of issues for Milestone 3. Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="Project Board.png">
 
 ## Completed user stories
 
