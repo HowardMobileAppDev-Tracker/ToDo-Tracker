@@ -132,8 +132,7 @@ from the original requirements
 	- User can enable a reminder notification for a To-Do item (removed).
   	- User can view To-Do items by completed/pending/all on the Home page (removed).
 
-[Add video/gif of your current application that shows build progress]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="ToDoGif.gif">
 
 ## App Demo Video
 
