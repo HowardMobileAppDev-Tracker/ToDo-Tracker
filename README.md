@@ -37,7 +37,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 **Optional Features**
 
 - [X] User can assign priorities to ToDo items.
-- [ ] User can delete a To-Do item.
+- [X] User can delete a To-Do item.
 
 
 ### 2. Screen Archetypes
@@ -126,6 +126,7 @@ To-Do Tracker is a platform for users to keep track of tasks they want to execut
 
 - List the completed user stories from this unit
 	-  User can assign priorities to ToDo items (added this unit).
+ 	- User can delete a To-Do item. 
 - List any pending user stories / any user stories you decided to cut
 from the original requirements
 	- User can enable a reminder notification for a To-Do item (removed).
