@@ -136,4 +136,4 @@ from the original requirements
 
 ## App Demo Video
 
-[![Our Demo Video]([(https://youtu.be/L5vtW5kNuEY)](https://youtu.be/L5vtW5kNuEY)
+[Our Demo Video](https://youtu.be/L5vtW5kNuEY)
