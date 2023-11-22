@@ -136,4 +136,4 @@ from the original requirements
 
 ## App Demo Video
 
-- Embed the YouTube/Vimeo link of your Completed Demo Day prep video
+[![Our Demo Video]([(https://youtu.be/L5vtW5kNuEY)](https://youtu.be/L5vtW5kNuEY)
